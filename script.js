@@ -3,9 +3,9 @@
    ▼▼▼ EDITE APENAS ESTA PARTE ▼▼▼
    ========================================================= */
 const CONFIG = {
-  // Cole aqui a URL do app do Google Apps Script (termina em /exec).
+  // URL do app do Google Apps Script (termina em /exec).
   // Passo a passo no README.md.
-  endpoint: "COLE_AQUI_A_URL_DO_GOOGLE_APPS_SCRIPT",
+  endpoint: "https://script.google.com/macros/s/AKfycbzVOuM1Cp_ZEX6FZsr9pbhyxb38503jW06DtOaVUQFTBZa0GSDUvlCMbgEx2CESi4jW/exec",
 };
 /* ▲▲▲ EDITE APENAS ESTA PARTE ▲▲▲ */
 
