@@ -15,9 +15,9 @@ const steps = Array.from(document.querySelectorAll(".step"));
 const progressBar = document.getElementById("progressBar");
 const stepCount = document.getElementById("stepCount");
 
-// Passos que contam como "pergunta" (fora a intro e a tela final).
+// Passos que contam como "pergunta" (fora a intro, transição e a tela final).
 const questionSteps = steps.filter(
-  (s) => !["intro", "done"].includes(s.dataset.step)
+  (s) => !["intro", "transition", "done"].includes(s.dataset.step)
 );
 
 let current = 0;
@@ -58,12 +58,11 @@ function showError(step, show, selector) {
 function validate(step) {
   const type = step.dataset.step;
 
-  // E-mail é opcional, mas se preenchido precisa ser válido.
   if (type === "field") {
     const input = step.querySelector(".input");
     if (input.id === "email") {
       const val = (input.value || "").trim();
-      if (val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) return false;
+      if (!val || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) return false;
       return true;
     }
   }
@@ -155,6 +154,16 @@ document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "hidden") enviarDados("parcial", true);
 });
 window.addEventListener("pagehide", () => enviarDados("parcial", true));
+
+// ----- Botão de envio desabilitado até marcar o consentimento -----
+const consentInput = document.getElementById("consent");
+const submitBtn = document.getElementById("submitBtn");
+
+function atualizarBotaoEnvio() {
+  submitBtn.disabled = !consentInput.checked || enviando;
+}
+
+consentInput.addEventListener("change", atualizarBotaoEnvio);
 
 // ----- Métricas de marketing -----
 function coletarMetricas() {
@@ -253,10 +262,9 @@ form.addEventListener("submit", (e) => {
     return showError(step, true, "#sendError");
   }
 
-  const btn = document.getElementById("submitBtn");
   enviando = true;
-  btn.disabled = true;
-  btn.textContent = "Enviando...";
+  atualizarBotaoEnvio();
+  submitBtn.textContent = "Enviando...";
   showError(step, false, "#sendError");
 
   Promise.resolve(enviarDados("completo"))
@@ -268,8 +276,8 @@ form.addEventListener("submit", (e) => {
     })
     .finally(() => {
       enviando = false;
-      btn.disabled = false;
-      btn.textContent = "Enviar minha candidatura";
+      submitBtn.textContent = "Enviar minhas respostas";
+      atualizarBotaoEnvio();
     });
 });
 

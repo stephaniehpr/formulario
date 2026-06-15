@@ -36,17 +36,18 @@
 
       <!-- ===== Tela inicial ===== -->
       <section class="step is-active" data-step="intro">
-        <span class="eyebrow">Candidatura · leva menos de 1 minuto</span>
-        <h1>Candidate-se a uma vaga no <em>Método Autora</em></h1>
-        <p class="lead">Responda algumas perguntas rápidas para entendermos o seu momento de pesquisa. Em seguida, falamos com você pelo WhatsApp.</p>
-        <button type="button" class="btn btn--lg" data-next>Começar candidatura</button>
-        <p class="reassure">Perguntas rápidas · leva cerca de 1 minuto</p>
+        <h1>Quero entender melhor o seu momento de pesquisa</h1>
+        <p class="lead">Este formulário é o primeiro passo para eu entender em que etapa você está, o que mais tem travado seu avanço e se o Método Autora faz sentido para o que você precisa agora.</p>
+        <p class="hint">Leva cerca de 2 minutos para responder.</p>
+        <p class="call">Vamos lá? :)</p>
+        <button type="button" class="btn btn--lg" data-next>Começar</button>
       </section>
 
       <!-- ===== Nome ===== -->
       <section class="step" data-step="field" data-required>
-        <label class="q" for="nome">Para começar, como podemos te chamar?</label>
-        <input class="input" type="text" id="nome" name="nome" autocomplete="given-name" placeholder="Seu nome" />
+        <label class="q" for="nome">Como posso te chamar?</label>
+        <p class="hint">Seu nome completo me ajuda a identificar sua resposta.</p>
+        <input class="input" type="text" id="nome" name="nome" autocomplete="name" placeholder="Seu nome completo" />
         <p class="error" data-error>Por favor, escreva seu nome.</p>
         <div class="actions">
           <button type="button" class="btn btn--ghost" data-back>Voltar</button>
@@ -54,21 +55,10 @@
         </div>
       </section>
 
-      <!-- ===== WhatsApp ===== -->
+      <!-- ===== E-mail ===== -->
       <section class="step" data-step="field" data-required>
-        <label class="q" for="whatsapp">Qual o seu WhatsApp?</label>
-        <p class="hint">Com DDD. É por aqui que vamos falar com você.</p>
-        <input class="input" type="tel" id="whatsapp" name="whatsapp" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999" />
-        <p class="error" data-error>Informe um WhatsApp válido (com DDD).</p>
-        <div class="actions">
-          <button type="button" class="btn btn--ghost" data-back>Voltar</button>
-          <button type="button" class="btn" data-next>Continuar</button>
-        </div>
-      </section>
-
-      <!-- ===== E-mail (opcional) ===== -->
-      <section class="step" data-step="field">
-        <label class="q" for="email">Seu melhor e-mail <span class="opt">(opcional)</span></label>
+        <label class="q" for="email">Qual é o seu melhor e-mail?</label>
+        <p class="hint">Confira se digitou corretamente.</p>
         <input class="input" type="email" id="email" name="email" autocomplete="email" placeholder="voce@email.com" />
         <p class="error" data-error>Esse e-mail parece inválido.</p>
         <div class="actions">
@@ -77,15 +67,35 @@
         </div>
       </section>
 
+      <!-- ===== WhatsApp ===== -->
+      <section class="step" data-step="field" data-required>
+        <label class="q" for="whatsapp">Qual é o seu WhatsApp?</label>
+        <p class="hint">Inclua o DDD e confira se todos os números estão corretos. É por lá que entrarei em contato caso o Método faça sentido para o seu momento.</p>
+        <input class="input" type="tel" id="whatsapp" name="whatsapp" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999" />
+        <p class="error" data-error>Informe um WhatsApp válido (com DDD).</p>
+        <div class="actions">
+          <button type="button" class="btn btn--ghost" data-back>Voltar</button>
+          <button type="button" class="btn" data-next>Continuar</button>
+        </div>
+      </section>
+
+      <!-- ===== Transição ===== -->
+      <section class="step" data-step="transition">
+        <p class="lead">Agora quero entender um pouco melhor o seu momento de pesquisa.</p>
+        <button type="button" class="btn btn--lg" data-next>Continuar</button>
+      </section>
+
       <!-- ===== Momento da pesquisa ===== -->
       <section class="step" data-step="choice" data-required>
-        <span class="q">Em que momento da pesquisa você está?</span>
+        <span class="q">Em qual destas situações você se encontra hoje?</span>
+        <p class="hint">Selecione uma opção.</p>
         <div class="choices" data-name="momento">
-          <button type="button" class="choice" data-value="Pré-projeto / processo seletivo">Pré-projeto ou processo seletivo</button>
-          <button type="button" class="choice" data-value="Mestrado">Mestrado</button>
-          <button type="button" class="choice" data-value="Doutorado">Doutorado</button>
-          <button type="button" class="choice" data-value="Pós concluída — quero voltar a publicar">Pós concluída — quero voltar a publicar</button>
-          <button type="button" class="choice" data-value="Outro">Outro</button>
+          <button type="button" class="choice" data-value="Estou me preparando para uma seleção de mestrado ou doutorado e preciso construir ou fortalecer meu pré-projeto.">Estou me preparando para uma seleção de mestrado ou doutorado e preciso construir ou fortalecer meu pré-projeto.</button>
+          <button type="button" class="choice" data-value="Iniciei o mestrado ou doutorado recentemente e quero conduzir a pesquisa com mais clareza e estrutura.">Iniciei o mestrado ou doutorado recentemente e quero conduzir a pesquisa com mais clareza e estrutura.</button>
+          <button type="button" class="choice" data-value="Já estou na pós-graduação, mas tenho enfrentado dificuldades para avançar na pesquisa.">Já estou na pós-graduação, mas tenho enfrentado dificuldades para avançar na pesquisa.</button>
+          <button type="button" class="choice" data-value="Estou na reta final da graduação, mestrado ou doutorado e travei na escrita do TCC, dissertação ou tese.">Estou na reta final da graduação, mestrado ou doutorado e travei na escrita do TCC, dissertação ou tese.</button>
+          <button type="button" class="choice" data-value="Já concluí a pós-graduação e quero voltar a escrever ou publicar artigos.">Já concluí a pós-graduação e quero voltar a escrever ou publicar artigos.</button>
+          <button type="button" class="choice" data-value="Outra situação.">Outra situação.</button>
         </div>
         <p class="error" data-error>Escolha uma opção para continuar.</p>
         <div class="actions">
@@ -93,15 +103,19 @@
         </div>
       </section>
 
-      <!-- ===== Maior trava ===== -->
+      <!-- ===== Principal dificuldade ===== -->
       <section class="step" data-step="choice" data-required>
-        <span class="q">Qual é a sua maior trava hoje?</span>
+        <span class="q">O que mais está travando o avanço da sua pesquisa hoje?</span>
+        <p class="hint">Escolha a dificuldade que mais pesa neste momento.</p>
         <div class="choices" data-name="trava">
-          <button type="button" class="choice" data-value="Não sei por onde começar">Não sei por onde começar</button>
-          <button type="button" class="choice" data-value="Referencial teórico (colcha de retalhos)">Referencial teórico (colcha de retalhos)</button>
-          <button type="button" class="choice" data-value="Escrever com a minha voz / autoria">Escrever com a minha voz / autoria</button>
-          <button type="button" class="choice" data-value="Discussão dos dados">Discussão dos dados</button>
-          <button type="button" class="choice" data-value="Rotina e organização da pesquisa">Rotina e organização da pesquisa</button>
+          <button type="button" class="choice" data-value="Delimitar tema, problema, pergunta ou objetivos.">Delimitar tema, problema, pergunta ou objetivos.</button>
+          <button type="button" class="choice" data-value="Entender por onde começar ou qual é o próximo passo.">Entender por onde começar ou qual é o próximo passo.</button>
+          <button type="button" class="choice" data-value="Transformar leituras em referencial teórico.">Transformar leituras em referencial teórico.</button>
+          <button type="button" class="choice" data-value="Organizar as ideias e transformá-las em um texto claro e autoral.">Organizar as ideias e transformá-las em um texto claro e autoral.</button>
+          <button type="button" class="choice" data-value="Definir ou justificar a metodologia.">Definir ou justificar a metodologia.</button>
+          <button type="button" class="choice" data-value="Transformar dados em análise e discussão.">Transformar dados em análise e discussão.</button>
+          <button type="button" class="choice" data-value="Criar uma rotina e organizar melhor o processo da pesquisa.">Criar uma rotina e organizar melhor o processo da pesquisa.</button>
+          <button type="button" class="choice" data-value="Outra dificuldade.">Outra dificuldade.</button>
         </div>
         <p class="error" data-error>Escolha uma opção para continuar.</p>
         <div class="actions">
@@ -109,13 +123,26 @@
         </div>
       </section>
 
-      <!-- ===== Prazo / urgência ===== -->
+      <!-- ===== Aprofundamento opcional ===== -->
+      <section class="step" data-step="field">
+        <label class="q" for="motivo">Como essa dificuldade aparece na prática para você?</label>
+        <p class="hint">Pode contar, em uma ou duas frases, o que acontece quando você tenta avançar.</p>
+        <textarea class="input input--area" id="motivo" name="motivo" rows="3" placeholder=""></textarea>
+        <div class="actions">
+          <button type="button" class="btn btn--ghost" data-back>Voltar</button>
+          <button type="button" class="btn" data-next>Continuar</button>
+        </div>
+      </section>
+
+      <!-- ===== Prazo ===== -->
       <section class="step" data-step="choice" data-required>
-        <span class="q">Você tem algum prazo se aproximando na sua pesquisa?</span>
+        <span class="q">Você tem algum prazo importante relacionado à pesquisa?</span>
         <div class="choices" data-name="prazo">
-          <button type="button" class="choice" data-value="Sim, nos próximos 1–3 meses" data-score="3">Sim, nos próximos 1–3 meses</button>
-          <button type="button" class="choice" data-value="Nos próximos 6 meses" data-score="1">Nos próximos 6 meses</button>
-          <button type="button" class="choice" data-value="Sem prazo definido" data-score="0">Sem prazo definido</button>
+          <button type="button" class="choice" data-value="Sim, nos próximos 30 dias." data-score="3">Sim, nos próximos 30 dias.</button>
+          <button type="button" class="choice" data-value="Sim, nos próximos 2 a 3 meses." data-score="3">Sim, nos próximos 2 a 3 meses.</button>
+          <button type="button" class="choice" data-value="Sim, nos próximos 4 a 6 meses." data-score="1">Sim, nos próximos 4 a 6 meses.</button>
+          <button type="button" class="choice" data-value="Tenho prazo, mas ele ainda está distante." data-score="0">Tenho prazo, mas ele ainda está distante.</button>
+          <button type="button" class="choice" data-value="Não tenho prazo definido, mas quero avançar." data-score="0">Não tenho prazo definido, mas quero avançar.</button>
         </div>
         <p class="error" data-error>Escolha uma opção para continuar.</p>
         <div class="actions">
@@ -125,11 +152,11 @@
 
       <!-- ===== Prioridade ===== -->
       <section class="step" data-step="choice" data-required>
-        <span class="q">Resolver a sua escrita acadêmica hoje é…</span>
+        <span class="q">Avançar nessa dificuldade hoje é…</span>
         <div class="choices" data-name="prioridade">
-          <button type="button" class="choice" data-value="Prioridade máxima, preciso destravar já" data-score="3">Prioridade máxima, preciso destravar já</button>
-          <button type="button" class="choice" data-value="Importante, mas não urgente" data-score="1">Importante, mas não urgente</button>
-          <button type="button" class="choice" data-value="Quero, mas sem pressa" data-score="0">Quero, mas sem pressa</button>
+          <button type="button" class="choice" data-value="Uma prioridade: isso já está afetando meu prazo ou o andamento da pesquisa." data-score="3">Uma prioridade: isso já está afetando meu prazo ou o andamento da pesquisa.</button>
+          <button type="button" class="choice" data-value="Importante: quero me organizar e avançar nos próximos meses." data-score="1">Importante: quero me organizar e avançar nos próximos meses.</button>
+          <button type="button" class="choice" data-value="Algo que quero resolver, mas ainda sem pressa." data-score="0">Algo que quero resolver, mas ainda sem pressa.</button>
         </div>
         <p class="error" data-error>Escolha uma opção para continuar.</p>
         <div class="actions">
@@ -137,13 +164,13 @@
         </div>
       </section>
 
-      <!-- ===== Prontidão para investir ===== -->
+      <!-- ===== Abertura para investimento ===== -->
       <section class="step" data-step="choice" data-required>
-        <span class="q">Para destravar sua pesquisa, você está disposta a investir em um método/apoio?</span>
+        <span class="q">Se fizer sentido para o seu momento, como você se posiciona em relação a investir em uma formação paga?</span>
         <div class="choices" data-name="investir">
-          <button type="button" class="choice" data-value="Sim, é prioridade pra mim" data-score="3">Sim, é prioridade pra mim</button>
-          <button type="button" class="choice" data-value="Depende do valor e das condições" data-score="1">Depende do valor e das condições</button>
-          <button type="button" class="choice" data-value="Por enquanto, só busco conteúdo gratuito" data-score="-5">Por enquanto, só busco conteúdo gratuito</button>
+          <button type="button" class="choice" data-value="Tenho abertura para investir agora." data-score="3">Tenho abertura para investir agora.</button>
+          <button type="button" class="choice" data-value="Quero conhecer o valor e as condições antes de decidir." data-score="1">Quero conhecer o valor e as condições antes de decidir.</button>
+          <button type="button" class="choice" data-value="Neste momento, estou buscando apenas conteúdos gratuitos." data-score="-5">Neste momento, estou buscando apenas conteúdos gratuitos.</button>
         </div>
         <p class="error" data-error>Escolha uma opção para continuar.</p>
         <div class="actions">
@@ -151,38 +178,28 @@
         </div>
       </section>
 
-      <!-- ===== Motivo / intenção ===== -->
-      <section class="step" data-step="field">
-        <label class="q" for="motivo">O que fez você procurar uma solução agora? <span class="opt">(opcional)</span></label>
-        <p class="hint">Pode ser uma frase. Ajuda a professora a entender o seu momento.</p>
-        <textarea class="input input--area" id="motivo" name="motivo" rows="3" placeholder="Ex.: minha qualificação está chegando e a escrita não anda..."></textarea>
-        <div class="actions">
-          <button type="button" class="btn btn--ghost" data-back>Voltar</button>
-          <button type="button" class="btn" data-next>Continuar</button>
-        </div>
-      </section>
-
-      <!-- ===== Consentimento + envio ===== -->
+      <!-- ===== Aviso antes do envio + consentimento ===== -->
       <section class="step" data-step="consent" data-required>
-        <span class="q">Quase lá! Confirma o contato?</span>
-        <p class="lead">Ao enviar, sua candidatura vai direto para a professora, que entra em contato pelo WhatsApp informado.</p>
+        <h2>Quase lá!</h2>
+        <p class="lead">Depois do envio, vou analisar suas respostas para entender melhor o seu momento e verificar se o Método Autora pode ajudar no que você precisa agora.</p>
+        <p class="hint">Se fizer sentido para o seu caso, entrarei em contato pelo WhatsApp informado para continuarmos a conversa.</p>
         <label class="check">
           <input type="checkbox" id="consent" name="consent" />
-          <span>Autorizo o contato pelo WhatsApp e e-mail informados sobre o Método Autora.</span>
+          <span>Estou ciente de que minhas respostas e meus dados de contato serão utilizados para a análise deste formulário e para o contato sobre o Método Autora.</span>
         </label>
         <p class="error" data-error>É preciso autorizar o contato para enviar.</p>
         <p class="error" id="sendError">Não foi possível enviar agora. Confira sua conexão e tente novamente.</p>
         <div class="actions">
           <button type="button" class="btn btn--ghost" data-back>Voltar</button>
-          <button type="submit" class="btn btn--lg" id="submitBtn">Enviar minha candidatura</button>
+          <button type="submit" class="btn btn--lg" id="submitBtn" disabled>Enviar minhas respostas</button>
         </div>
       </section>
 
       <!-- ===== Tela final ===== -->
       <section class="step step--done" data-step="done">
         <div class="done__seal" aria-hidden="true">✓</div>
-        <h2>Candidatura enviada!</h2>
-        <p class="lead">Recebemos suas respostas. Em breve a professora entra em contato com você pelo WhatsApp. Enquanto isso:</p>
+        <h2>Respostas enviadas com sucesso!</h2>
+        <p class="lead">Obrigada por compartilhar um pouco do seu momento de pesquisa comigo.</p>
         <a href="https://www.metodoautora.com.br" class="btn btn--lg" target="_blank" rel="noopener">Conhecer o Método Autora</a>
         <a href="https://instagram.com/steribeiroprof" class="link-secondary" target="_blank" rel="noopener">Seguir @steribeiroprof no Instagram</a>
       </section>
